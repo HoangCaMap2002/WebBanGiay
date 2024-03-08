@@ -1,0 +1,22 @@
+﻿@model List<Product>
+@{
+	Layout = "~/Views/Shared/_LayoutMain.cshtml";
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="row row-pb-md">
+	@foreach (var item in Model)
+	{
+		<div class="col-lg-3 mb-4 text-center">
+			<div class="product-entry border">
+				<a href="#" class="prod-img">
+					<img src="../assets/imageproduct/@item.Img" class="img-fluid" alt="Free html5 bootstrap 4 template">
+				</a>
+				<div class="desc">
+					<h2><a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@item.ProductId">@item.ProductName</a></h2>
+					<span class="price">@item.Price.ToString("N0")₫</span>
+				</div>
+			</div>
+		</div>
+	}
+</div>

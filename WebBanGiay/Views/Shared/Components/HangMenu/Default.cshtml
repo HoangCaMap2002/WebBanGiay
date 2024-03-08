@@ -1,0 +1,7 @@
+﻿@model IEnumerable<Brand>
+<ul class="dropdown">
+	@foreach (var item in Model)
+	{
+		<li><a href="/Product/ProductByBrandId?id=@item.BrandId">@item.BrandName</a></li>
+	}
+</ul>

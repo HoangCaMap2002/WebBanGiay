@@ -1,0 +1,85 @@
+﻿@using WebBanGiay.ViewModels;
+@model RegisterVM;
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Purple Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../assetsadmin/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../assetsadmin/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../assetsadmin/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="../assetsadmin/images/favicon.ico" />
+</head>
+<body>
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+            <div class="content-wrapper d-flex align-items-center auth">
+                <div class="row flex-grow">
+                    <div class="col-lg-4 mx-auto">
+                        <div class="auth-form-light text-left p-5">
+                            <div class="brand-logo">
+                                <img src="../assetsadmin/images/logo.svg">
+                            </div>
+                            <h4>New here?</h4>
+                            <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
+                            @using (Html.BeginForm("Register", "Access", FormMethod.Post))
+                            {
+                                @TempData["Error"]
+                                @Html.TextBoxFor(temp => temp.Username, new {@class="form-control form-control-lg", placeholder="Tài khoản"})
+                                @Html.ValidationMessageFor(temp => temp.Username)
+                                @Html.TextBoxFor(temp => temp.Email, new {@class="form-control form-control-lg", placeholder="email", type="email"})
+                                @Html.ValidationMessageFor(temp => temp.Email)
+                                @Html.TextBoxFor(temp => temp.Name, new {@class="form-control form-control-lg", placeholder="Họ và tên"})
+                                @Html.ValidationMessageFor(temp => temp.Name)
+                                <div class="input-icon">
+                                    @Html.TextBoxFor(temp => temp.Password, new {@class="form-control form-control-lg", placeholder="Mật khẩu", type="password"})
+                                    @Html.ValidationMessageFor(temp => temp.Password)
+                                    <i class="fa fa-eye show-password"></i>
+                                </div>
+                                @Html.TextBoxFor(temp => temp.ConfirmPassword, new {@class="form-control form-control-lg", placeholder="Xác nhận mật khẩu", type="password"})
+                                @Html.ValidationMessageFor(temp => temp.ConfirmPassword)
+                                <label class="btn active">
+                                    <input type="checkbox" name='email1' checked>
+                                    <i class="fa fa-square-o"></i><i class="fa fa-check-square-o"></i>
+                                    <span> Tôi đồng ý với <a href="#">điều kiện</a> và <a href="#">chính sách bảo mật</a>.</span>
+                                </label>
+                                <div class="footer-action">
+                                    <input type="submit" value="Đăng ký" class="auth-submit">
+                                    <a class="auth-btn-direct">Đăng nhập</a>
+                                </div>
+                            }
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="../assetsadmin/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../assetsadmin/js/off-canvas.js"></script>
+    <script src="../assetsadmin/js/hoverable-collapse.js"></script>
+    <script src="../assetsadmin/js/misc.js"></script>
+    <!-- endinject -->
+</body>
+</html>

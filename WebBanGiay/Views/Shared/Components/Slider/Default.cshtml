@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Slider>
+<ul class="slides">
+	@foreach (var item in Model)
+	{
+		<li style="background-image: url(../assets/images/@item.ImageUrl);">
+			<div class="overlay"></div>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-6 offset-sm-3 text-center slider-text">
+						<div class="slider-text-inner">
+							<div class="desc">
+								<h1 class="head-1">Huge</h1>
+								<h2 class="head-2">Sale</h2>
+								<h2 class="head-3"><strong class="font-weight-bold">50%</strong> Off</h2>
+								<p class="category"><span>Big sale sandals</span></p>
+								<p><a href="#" class="btn btn-primary">Shop Collection</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+	}
+</ul>
